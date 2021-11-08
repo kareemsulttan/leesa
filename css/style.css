@@ -24,6 +24,7 @@ Date            :  5/11/2021
   --antiquewhite: #FBF9F1;
   --body-text-color: #34082C;
   --muted: #595959;
+  --light-green: #D7FDEF;
 
 }
 
@@ -142,11 +143,30 @@ body {
   font-family: 'neue_montrealbold', sans-serif;
 }
 .text-muted {color: var(--muted)!important;}
+.text-light-green {color: var(--light-green)!important;}
+.badge {
+  font-size: .5rem;
+  border-radius: 100px;
+  padding: 8px 12px;
+}
+.badge-lg {
+  font-size: .75rem;
+  padding: 12px 21px;
+}
+.badge-light-green {background-color: var(--light-green); color:var(--primary)}
+hr {
+  border-top-color:#2F681A;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-top: 68px;
+  margin-bottom: 56px;
+}
 
 /*heading sizes*/
 
 .h1, h1 {font-size: 3.5rem;}
 .h2, h2 {font-size: 2.25rem;}
+.h3, h3 {font-size: 1.125rem;}
 p {line-height: 150%;}
 a {font-family: "neue_montrealregular", sans-serif;}
 a:hover{color: initial;}
@@ -247,7 +267,11 @@ header.fixed-top.scrolled {
   padding-bottom: 57px;
   color: var(--body-text-color);
  }
-
+ .section-title h2 mark {
+  max-height: 38px;
+  line-height: 38px;
+  padding-bottom: 38px;
+ }
  /* ============================================ *
  * alert section
  * ============================================ */
@@ -261,11 +285,54 @@ header.fixed-top.scrolled {
    background-color: var(--primary);
  }
 
-  /* ============================================ *
+/* ============================================ *
  * faq section
  * ============================================ */
 
  .right-side {max-width: 90%;}
+ .right-side-img {max-width: 500px;}
+
+/* ============================================ *
+ * accordion
+ * ============================================ */
+
+  #accordion .card, #accordion .card-header, #accordion .card-body, #accordion .card-header:first-child {
+    border-radius: 0!important;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  #accordion .card-header .btn-link {
+    font-size: 1.25rem;
+    padding: 0;
+    color: var(--white);
+    width: 100%;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    white-space: inherit;
+    max-height: inherit;
+  }
+  #accordion .card-header h5 > .btn:after {
+    content: "";
+    display: inline-block;
+    background: url(../assets/icons/plus.png) no-repeat center center;
+    position: absolute;
+    height: 100%;
+    width: 16px;
+    top: 0;
+    right: 0;
+  }
+
+  #accordion .card-header h5 > .btn[aria-expanded="true"]:after {
+    background-image: url(../assets/icons/minus.png);
+  }
+
+
+ #accordion .card-body {
+   color: var(--light-green);
+ }
+
 
 /* ============================================ *
  * responsive

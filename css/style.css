@@ -144,6 +144,7 @@ body {
 }
 .text-muted {color: var(--muted)!important;}
 .text-light-green {color: var(--light-green)!important;}
+.text-black {color: var(--black)!important;}
 .badge {
   font-size: .5rem;
   border-radius: 100px;
@@ -153,7 +154,7 @@ body {
   font-size: .75rem;
   padding: 12px 21px;
 }
-.badge-light-green {background-color: var(--light-green); color:var(--primary)}
+.badge-light-green {background-color: var(--light-green)!important; color:var(--primary)}
 hr {
   border-top-color:#2F681A;
   margin-right: -15px;
@@ -185,7 +186,12 @@ button:focus {outline: none!important;}
 .btn-primary,.btn-primary:active {background-color: var(--primary)!important;}
 .btn-primary:hover {background-color: var(--body-text-color)!important;}
 .btn.focus, .btn:focus,.btn:not(:disabled):not(.disabled).active:focus, .btn:not(:disabled):not(.disabled):active:focus, .show>.btn.dropdown-toggle:focus {box-shadow: none;}
-
+.btn-outline-primary,.btn-outline-primary:hover {
+  color: var(--primary);
+  font-family: "neue_montrealbold", sans-serif;
+  border: 1px solid var(--primary);
+  background-color: transparent;
+}
 
 /*sections backgrounds*/
 
@@ -323,16 +329,40 @@ header.fixed-top.scrolled {
     top: 0;
     right: 0;
   }
-
   #accordion .card-header h5 > .btn[aria-expanded="true"]:after {
     background-image: url(../assets/icons/minus.png);
   }
-
-
  #accordion .card-body {
    color: var(--light-green);
  }
 
+ /* ============================================ *
+ * pricing
+ * ============================================ */
+
+ #pricing .card {
+    min-width: 350px;
+    height: 450px;
+    background-color: #FBF9F1!important;
+    padding: 2.25rem!important;
+  }
+  #pricing .card, #pricing .card .card-header, #pricing .card .card-body,#pricing .card .card-footer {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+  #pricing .card .card-header h3,
+  #pricing .card .card-header h1 {
+    font-family: "neue_montrealregular", sans-serif;
+  }
+  #pricing .card.recommended-plan {
+    background-color: var(--primary)!important;
+    color: var(--light-green);
+    min-width: 393px;
+    height: 490px;
+    padding: 3.5rem!important;
+  }
 
 /* ============================================ *
  * responsive
@@ -373,7 +403,7 @@ header.fixed-top.scrolled {
   .alert .btn:first-child {padding-left: 0!important;}
  }
  @media(max-width:630px) {
-  .h1, h1 {font-size: 2.1875rem;}
+  .h1, h1:not(#pricing .card .card-header h1) {font-size: 2.1875rem;}
   section {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -386,5 +416,13 @@ header.fixed-top.scrolled {
   .right-side {max-width: 100%;}
  }
  @media(max-width:400px) {
-  .h1, h1 {font-size: 1.8rem;}
+  .h1, h1:not(#pricing .card .card-header h1) {font-size: 1.8rem;}
+  #pricing .card,#pricing .card.recommended-plan {
+    min-width: 100%!important;
+    padding: 1.25rem!important;
+    height: auto;
+  }
+  #pricing .card ul {
+    margin-bottom: 2rem!important;
+  }
  }

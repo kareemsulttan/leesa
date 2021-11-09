@@ -133,7 +133,6 @@ body {
   font: 500 1.125rem/1.35 "neue_montrealregular", sans-serif;
   color: var(--body-text-color)!important;
   text-align: left;
-  height: 5000px;
 }
 
 /*text colors - sizes*/
@@ -249,7 +248,7 @@ header.fixed-top.scrolled {
  * sections
  * ============================================ */
 
- section {
+ section, footer {
   overflow: hidden;
   position: relative;
   padding-top: 80px;
@@ -395,7 +394,7 @@ header.fixed-top.scrolled {
   #hero {padding-top: 70px;}
  }
  @media(max-width:767px) {
-   section,header.fixed-top {
+   section,header.fixed-top,footer {
      padding-right: 40px!important;
      padding-left: 40px!important;
   }
@@ -404,12 +403,12 @@ header.fixed-top.scrolled {
  }
  @media(max-width:630px) {
   .h1, h1:not(#pricing .card .card-header h1) {font-size: 2.1875rem;}
-  section {
+  section, footer  {
     padding-top: 40px;
     padding-bottom: 40px;
   }
   #hero {padding-top: 0;}
-  section,header.fixed-top {
+  section,header.fixed-top,footer {
     padding-right: 20px!important;
     padding-left: 20px!important;
   }
